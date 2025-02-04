@@ -1,6 +1,7 @@
 package net.razvan.un_gunoi_de_mod;
 
 import com.mojang.logging.LogUtils;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -12,6 +13,7 @@ import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.razvan.un_gunoi_de_mod.item.Moditems;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -22,20 +24,29 @@ public class UnModGunoias {
     // Directly reference a slf4j logger
     private static final Logger LOGGER = LogUtils.getLogger();
 
-    public UnModGunoias(FMLJavaModLoadingContext context) {
+   /* public UnModGunoias(FMLJavaModLoadingContext context) {
         IEventBus modEventBus = context.getModEventBus();
 
-        // Register the commonSetup method for modloading
+        Moditems.register(modEventBus);
+
         modEventBus.addListener(this::commonSetup);
 
-        // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
 
-        // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
 
-        // Register our mod's ForgeConfigSpec so that Forge can create and load the config file for us
-    }
+    }*/
+
+   public UnModGunoias(FMLJavaModLoadingContext context) {
+       IEventBus modEventBus = context.getModEventBus();
+
+       Moditems.register(modEventBus); // Ensure this is here before using the item!
+
+       modEventBus.addListener(this::commonSetup);
+       modEventBus.addListener(this::addCreative);
+
+       MinecraftForge.EVENT_BUS.register(this);
+   }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
 
@@ -43,8 +54,13 @@ public class UnModGunoias {
 
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
+            if (Moditems.RAZVANITE.isPresent()) {
+                LOGGER.info("Successfully adding RAZVANITE to the creative tab.");
+                event.accept(Moditems.RAZVANITE.get());
+            }
+   }
 
-    }
+
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
     @SubscribeEvent
