@@ -13,6 +13,7 @@ import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.razvan.un_gunoi_de_mod.ModCreativeModeTabs;
 import net.razvan.un_gunoi_de_mod.item.Moditems;
 import org.slf4j.Logger;
 
@@ -21,24 +22,12 @@ import org.slf4j.Logger;
 public class UnModGunoias {
     // Define mod id in a common place for everything to reference
     public static final String MOD_ID = "un_gunoi_de_mod";
-    // Directly reference a slf4j logger
     private static final Logger LOGGER = LogUtils.getLogger();
-
-   /* public UnModGunoias(FMLJavaModLoadingContext context) {
-        IEventBus modEventBus = context.getModEventBus();
-
-        Moditems.register(modEventBus);
-
-        modEventBus.addListener(this::commonSetup);
-
-        MinecraftForge.EVENT_BUS.register(this);
-
-        modEventBus.addListener(this::addCreative);
-
-    }*/
 
    public UnModGunoias(FMLJavaModLoadingContext context) {
        IEventBus modEventBus = context.getModEventBus();
+
+       ModCreativeModeTabs.register(modEventBus);
 
        Moditems.register(modEventBus); // Ensure this is here before using the item!
 
@@ -55,8 +44,8 @@ public class UnModGunoias {
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
             if (Moditems.RAZVANITE.isPresent()) {
-                LOGGER.info("Successfully adding RAZVANITE to the creative tab.");
                 event.accept(Moditems.RAZVANITE.get());
+                event.accept(Moditems.RAW_RAZVANITE.get());
             }
    }
 

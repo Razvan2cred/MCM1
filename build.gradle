@@ -215,3 +215,9 @@ sourceSets.each {
     it.output.resourcesDir = dir
     it.java.destinationDirectory = dir
 }
+
+sourceSets {
+    main {
+        resources.srcDirs = ["src/main/resources"]
+    }
+}
