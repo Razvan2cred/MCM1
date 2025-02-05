@@ -29,10 +29,6 @@ public class Moditems {
             () -> new Item(new Item.Properties()
                     .setId(ResourceKey.create(Registries.ITEM, ResourceLocation.parse(UnModGunoias.MOD_ID + ":razvanite")))
             ));
-    public static final RegistryObject<Item> RAW_RAZVANITE = ITEMS.register("raw_razvanite",
-            () -> new Item(new Item.Properties()
-                    .setId(ResourceKey.create(Registries.ITEM, ResourceLocation.parse(UnModGunoias.MOD_ID + ":raw_razvanite")))
-            ));
                 public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }
