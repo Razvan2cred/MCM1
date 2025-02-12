@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "un_gunoi_de_mod:item/razvanite_sword"
+  }
+}

@@ -46,6 +46,7 @@ public class UnModGunoias {
             if (Moditems.RAZVANITE.isPresent()) {
                 event.accept(Moditems.RAZVANITE.get());
                 event.accept(Moditems.RAW_RAZVANITE.get());
+                event.accept(Moditems.RAZVANITE_SWORD.get());
             }
    }
 

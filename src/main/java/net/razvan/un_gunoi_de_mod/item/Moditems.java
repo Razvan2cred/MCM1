@@ -33,6 +33,10 @@ public class Moditems {
             () -> new Item(new Item.Properties()
                     .setId(ResourceKey.create(Registries.ITEM, ResourceLocation.parse(UnModGunoias.MOD_ID + ":raw_razvanite")))
             ));
+    public static final RegistryObject<Item> RAZVANITE_SWORD = ITEMS.register("razvanite_sword",
+            () -> new Item(new Item.Properties()
+                    .setId(ResourceKey.create(Registries.ITEM, ResourceLocation.parse(UnModGunoias.MOD_ID + ":razvanite_sword")))
+            ));
                 public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }
