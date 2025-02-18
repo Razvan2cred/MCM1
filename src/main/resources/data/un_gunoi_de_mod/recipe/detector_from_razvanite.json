@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": "un_gunoi_de_mod:razvanite",
+    "x": "minecraft:stick"
+  },
+  "pattern": [
+    "#",
+    "#",
+    "x"
+  ],
+  "result": {
+    "count": 1,
+    "id" : "un_gunoi_de_mod:razvanite_sword"
+  }
+}
