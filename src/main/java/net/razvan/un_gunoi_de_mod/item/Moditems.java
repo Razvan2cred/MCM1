@@ -5,6 +5,7 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.SwordItem;
+import net.minecraft.world.item.ToolMaterial;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -36,7 +37,7 @@ public class Moditems {
                     .setId(ResourceKey.create(Registries.ITEM, ResourceLocation.parse(UnModGunoias.MOD_ID + ":raw_razvanite")))
             ));
     public static final RegistryObject<Item> RAZVANITE_SWORD = ITEMS.register("razvanite_sword",
-            () -> new Item(new Item.Properties()
+            () -> new SwordItem(ToolMaterial.NETHERITE, 14,-2.4f, new Item.Properties()
                     .setId(ResourceKey.create(Registries.ITEM, ResourceLocation.parse(UnModGunoias.MOD_ID + ":razvanite_sword")))
             ));
     public static final RegistryObject<Item> RAZVANITE_DETECTOR = ITEMS.register("razvanite_detector",
