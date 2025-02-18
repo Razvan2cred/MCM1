@@ -20,6 +20,7 @@ public class ModCreativeModeTabs {
                         pOutput.accept(Moditems.RAZVANITE.get());
                         pOutput.accept(Moditems.RAW_RAZVANITE.get());
                         pOutput.accept(Moditems.RAZVANITE_SWORD.get());
+                        pOutput.accept(Moditems.RAZVANITE_DETECTOR.get());
 
                         pOutput.accept(Items.DANDELION);
                     })
