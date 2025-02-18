@@ -2,15 +2,15 @@
   "type": "minecraft:crafting_shaped",
   "key": {
     "#": "un_gunoi_de_mod:razvanite",
-    "x": "minecraft:stick"
+    "x": "minecraft:stick",
+    "d": "minecraft:diamond"
   },
   "pattern": [
-    "#",
-    "#",
-    "x"
+    "#d#",
+    " x "
   ],
   "result": {
     "count": 1,
-    "id" : "un_gunoi_de_mod:razvanite_sword"
+    "id" : "un_gunoi_de_mod:razvanite_detector"
   }
 }

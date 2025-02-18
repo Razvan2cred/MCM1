@@ -48,7 +48,7 @@ public class RazvaniteItem extends Item {
     }
 
     private void outputValuableCoordinates(BlockPos blockPos, Player player, Block block) {
-        player.getCommandSenderWorld().playSound(null, player.blockPosition(),SoundEvents.CAT_PURREOW, SoundSource.PLAYERS,1.0f,1.0f);
+        player.getCommandSenderWorld().playSound(null, player.blockPosition(),SoundEvents.CAT_PURREOW, SoundSource.PLAYERS,100.0f,1.0f);
         ///Component.literal("Found "+ I18n.get(block.getDescriptionId())+"at"+
         ///"("+blockPos.getX()+", "+blockPos.getY()+", "+blockPos.getZ()+")"));
     }

@@ -1,7 +1,7 @@
 {
-  "type": "minecraft:smelting",
+  "type": "minecraft:blasting",
   "category": "misc",
-  "cookingtime": 369,
+  "cookingtime": 69,
   "experience": 420.69,
   "group": "razvanite",
   "ingredient": "un_gunoi_de_mod:raw_razvanite",
