@@ -30,8 +30,8 @@ public class UnModGunoias {
 
        ModCreativeModeTabs.register(modEventBus);
 
-       Moditems.register(modEventBus); // Ensure this is here before using the item!
        ModBlocks.register(modEventBus);
+       Moditems.register(modEventBus); // Ensure this is here before using the item!
 
        modEventBus.addListener(this::commonSetup);
        modEventBus.addListener(this::addCreative);
@@ -53,6 +53,17 @@ public class UnModGunoias {
                 event.accept(ModBlocks.RAZVANITE_BLOCK.get());
             }
    }
+   /*
+   private void addCreative(BuildCreativeModeTabContentsEvent event) {
+    // Use the BLOCK ITEM, not the block itself
+    event.accept(Moditems.ITEMS.getEntries().stream()
+        .filter(item -> item.getId().getPath().equals("razvanite_block"))
+        .findFirst()
+        .orElseThrow()
+        .get()
+    );
+}
+    */
 
 
 
