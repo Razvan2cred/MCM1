@@ -14,6 +14,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.razvan.un_gunoi_de_mod.ModCreativeModeTabs;
+import net.razvan.un_gunoi_de_mod.block.ModBlocks;
 import net.razvan.un_gunoi_de_mod.item.Moditems;
 import org.slf4j.Logger;
 
@@ -30,6 +31,7 @@ public class UnModGunoias {
        ModCreativeModeTabs.register(modEventBus);
 
        Moditems.register(modEventBus); // Ensure this is here before using the item!
+       ModBlocks.register(modEventBus);
 
        modEventBus.addListener(this::commonSetup);
        modEventBus.addListener(this::addCreative);
@@ -48,6 +50,7 @@ public class UnModGunoias {
                 event.accept(Moditems.RAW_RAZVANITE.get());
                 event.accept(Moditems.RAZVANITE_SWORD.get());
                 event.accept(Moditems.RAZVANITE_DETECTOR.get());
+                event.accept(ModBlocks.RAZVANITE_BLOCK.get());
             }
    }
 

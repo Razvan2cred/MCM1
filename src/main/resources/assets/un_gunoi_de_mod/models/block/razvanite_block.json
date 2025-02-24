@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "un_gunoi_de_mod:block/razvanite_block"
+  }
+}
